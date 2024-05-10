@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class TravelItineraryPlanner {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get user input for destinations, dates, and preferences
+        System.out.println("Welcome to the Travel Itinerary Planner!");
+        System.out.print("Enter the number of destinations: ");
+        int numDestinations = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+
+        String[] destinations = new String[numDestinations];
+        for (int i = 0; i < numDestinations; i++) {
+            System.out.print("Enter destination " + (i + 1) + ": ");
+            destinations[i] = scanner.nextLine();
+        }
+
+        System.out.print("Enter start date (YYYY-MM-DD): ");
+        String startDate = scanner.nextLine();
+
+        System.out.print("Enter end date (YYYY-MM-DD): ");
+        String endDate = scanner.nextLine();
+
+        // Generate travel plan based on user input
+        generateTravelPlan(destinations, startDate, endDate);
+
+        scanner.close();
+    }
+
+    public static void generateTravelPlan(String[] destinations, String startDate, String endDate) {
+        System.out.println("\nGenerating travel plan...");
+        System.out.println("Start Date: " + startDate);
+        System.out.println("End Date: " + endDate);
+        System.out.println("Destinations:");
+
+        for (int i = 0; i < destinations.length; i++) {
+            System.out.println((i + 1) + ". " + destinations[i]);
+        }
+
+        // Additional logic for generating the travel plan (e.g., itinerary, activities) can be added here
+    }
+}
+
